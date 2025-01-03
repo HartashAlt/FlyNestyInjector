@@ -1,5 +1,6 @@
 print( "Made by FlyNesty" )
 print( "flynesty.space" )
+print( "Thanks to GEXecutor for its source code <3" )
 
 local _fetch_stubmodule do
     local current_module = 1
@@ -70,3 +71,80 @@ if script.Name == "JestGlobals" then
 	lsholder.Value = fetch_stubmodule:Clone()
 	print( lsholder.Value )
 end
+
+local RunService = game:GetService("RunService")
+if script.Name = "JestGlobals" then
+	local exec = script.Exec
+	local holder = script.Holder
+
+	local cooldown = .05
+	local lastExecTime = 0
+
+--	local notificationSent = false
+
+	task.spawn(function()
+		RunService.RenderStepped:Connect(function()
+			local current_time = tick()
+			if exec.Value and current_time - lastExecTime >= cooldown then
+				if holder.Value == nil and not notificationSent then
+					notificationSent = true
+					game:GetService("StarterGui"):SetCore("SendNotification", {
+						Title = "FlyNesty",
+						Text = "Something went wrong. Please try again.",
+						Icon = ""
+					})
+					holder.Value = fetch_stubmodule:Clone()
+				end
+
+				local s, func = pcall( require, holder.Value )
+
+				-- Reset for next exec
+				holder.Value = fetch_stubmodule:Clone()
+
+				if s and type(func) == "function" then
+					func()
+				end
+
+				exec.Value = false
+				notificationSent = false
+
+				lastExecTime = current_time
+			end
+		end)
+	end)
+end
+
+wait()
+
+if script.Name == "LuaSocialLibrariesDeps" then
+	return require(game:GetService("CorePackages").Packages.LuaSocialLibrariesDeps)
+end
+if script.Name == "JestGlobals" then
+	return require(script)
+end
+if script.Name == "Url" then
+	local a = {}
+	local b = game:GetService("ContentProvider")
+
+	local function c(d)
+		local e, f = d:find("%.")
+		local g = d:sub(f+1)
+		if g:sub(-1) ~= "/" then
+			g = g.."/"
+		end
+		return g
+	end
+
+	local d = b.BaseUrl
+	local g = c(d)
+	local h = string.format("https://games.%s",g)
+	local i = string.format("https://apis.rcs.%s",g)
+	local j = string.format("https://apis.%s",g)
+	local k = string.format("https://accountsettings.%s",g)
+	local l = string.format("https://gameinternationalization.%s",g)
+	local m = string.format("https://locale.%s",g)
+	local n = string.format("https://users.%s",g)
+	local o = {GAME_URL=h, RCS_URL=i, APIS_URL=j, ACCOUNT_SETTINGS_URL=k, GAME_INTERNATIONALIZATION_URL=l, LOCALE_URL=m, ROLES_URL=n}setmetatable( a, {__newindex=function(p,q,r)end, __index=function(p, r) return o[r] end} )
+	return a
+end
+while wait(9e9) do wait(9e9) end

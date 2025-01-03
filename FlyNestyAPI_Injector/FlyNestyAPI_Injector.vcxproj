@@ -151,17 +151,64 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="dependencies\Luau\Ast.h" />
+    <ClInclude Include="dependencies\Luau\BuiltinFolding.h" />
+    <ClInclude Include="dependencies\Luau\Builtins.h" />
+    <ClInclude Include="dependencies\Luau\Bytecode.h" />
+    <ClInclude Include="dependencies\Luau\BytecodeBuilder.h" />
+    <ClInclude Include="dependencies\Luau\BytecodeUtils.h" />
+    <ClInclude Include="dependencies\Luau\Common.h" />
+    <ClInclude Include="dependencies\Luau\Compiler.h" />
+    <ClInclude Include="dependencies\Luau\Confusables.h" />
+    <ClInclude Include="dependencies\Luau\ConstantFolding.h" />
+    <ClInclude Include="dependencies\Luau\CostModel.h" />
+    <ClInclude Include="dependencies\Luau\DenseHash.h" />
+    <ClInclude Include="dependencies\Luau\ExperimentalFlags.h" />
+    <ClInclude Include="dependencies\Luau\Lexer.h" />
+    <ClInclude Include="dependencies\Luau\Location.h" />
+    <ClInclude Include="dependencies\Luau\ParseOptions.h" />
+    <ClInclude Include="dependencies\Luau\Parser.h" />
+    <ClInclude Include="dependencies\Luau\ParseResult.h" />
+    <ClInclude Include="dependencies\Luau\StringUtils.h" />
+    <ClInclude Include="dependencies\Luau\TableShape.h" />
+    <ClInclude Include="dependencies\Luau\TimeTrace.h" />
+    <ClInclude Include="dependencies\Luau\Types.h" />
+    <ClInclude Include="dependencies\Luau\ValueTracking.h" />
+    <ClInclude Include="dependencies\Luau\Variant.h" />
+    <ClInclude Include="dependencies\Luau\VecDeque.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="utils\rbx\offsets.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dependencies\Luau\Ast.cpp" />
+    <ClCompile Include="dependencies\Luau\BuiltinFolding.cpp" />
+    <ClCompile Include="dependencies\Luau\Builtins.cpp" />
+    <ClCompile Include="dependencies\Luau\BytecodeBuilder.cpp" />
+    <ClCompile Include="dependencies\Luau\Compiler.cpp" />
+    <ClCompile Include="dependencies\Luau\Confusables.cpp" />
+    <ClCompile Include="dependencies\Luau\ConstantFolding.cpp" />
+    <ClCompile Include="dependencies\Luau\CostModel.cpp" />
+    <ClCompile Include="dependencies\Luau\lcode.cpp" />
+    <ClCompile Include="dependencies\Luau\Lexer.cpp" />
+    <ClCompile Include="dependencies\Luau\Location.cpp" />
+    <ClCompile Include="dependencies\Luau\Parser.cpp" />
+    <ClCompile Include="dependencies\Luau\StringUtils.cpp" />
+    <ClCompile Include="dependencies\Luau\TableShape.cpp" />
+    <ClCompile Include="dependencies\Luau\TimeTrace.cpp" />
+    <ClCompile Include="dependencies\Luau\Types.cpp" />
+    <ClCompile Include="dependencies\Luau\ValueTracking.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="injector.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="init.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
