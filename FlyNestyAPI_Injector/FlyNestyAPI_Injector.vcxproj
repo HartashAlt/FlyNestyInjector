@@ -182,6 +182,7 @@
     <ClInclude Include="utils\rbx\datamodel\datamodel.hpp" />
     <ClInclude Include="utils\rbx\instance\instance.hpp" />
     <ClInclude Include="utils\rbx\offsets.hpp" />
+    <ClInclude Include="utils\rbx\storage.hpp" />
     <ClInclude Include="utils\utils\memory\memory.hpp" />
     <ClInclude Include="utils\utils\memory\WinAPI.hpp" />
   </ItemGroup>
