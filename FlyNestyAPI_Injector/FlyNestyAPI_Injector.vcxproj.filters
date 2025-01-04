@@ -99,6 +99,15 @@
     <ClInclude Include="utils\rbx\offsets.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="utils\utils\memory\memory.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\utils\memory\WinAPI.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\rbx\datamodel\datamodel.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -159,6 +168,12 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="dependencies\Luau\ValueTracking.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\utils\memory\memory.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\rbx\datamodel\datamodel.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

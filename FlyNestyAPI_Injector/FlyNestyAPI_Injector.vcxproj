@@ -124,6 +124,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -178,7 +179,10 @@
     <ClInclude Include="dependencies\Luau\VecDeque.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="utils\rbx\datamodel\datamodel.hpp" />
     <ClInclude Include="utils\rbx\offsets.hpp" />
+    <ClInclude Include="utils\utils\memory\memory.hpp" />
+    <ClInclude Include="utils\utils\memory\WinAPI.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dependencies\Luau\Ast.cpp" />
@@ -206,6 +210,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="utils\rbx\datamodel\datamodel.cpp" />
+    <ClCompile Include="utils\utils\memory\memory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="init.lua" />
