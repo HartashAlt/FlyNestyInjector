@@ -180,6 +180,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="utils\rbx\datamodel\datamodel.hpp" />
+    <ClInclude Include="utils\rbx\instance\instance.hpp" />
     <ClInclude Include="utils\rbx\offsets.hpp" />
     <ClInclude Include="utils\utils\memory\memory.hpp" />
     <ClInclude Include="utils\utils\memory\WinAPI.hpp" />
@@ -211,6 +212,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="utils\rbx\datamodel\datamodel.cpp" />
+    <ClCompile Include="utils\rbx\instance\instance.cpp" />
     <ClCompile Include="utils\utils\memory\memory.cpp" />
   </ItemGroup>
   <ItemGroup>
