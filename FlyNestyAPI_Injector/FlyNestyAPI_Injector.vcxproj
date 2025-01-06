@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="dependencies\luacode.h" />
     <ClInclude Include="dependencies\Luau\Ast.h" />
     <ClInclude Include="dependencies\Luau\BuiltinFolding.h" />
     <ClInclude Include="dependencies\Luau\Builtins.h" />
@@ -177,6 +178,7 @@
     <ClInclude Include="dependencies\Luau\ValueTracking.h" />
     <ClInclude Include="dependencies\Luau\Variant.h" />
     <ClInclude Include="dependencies\Luau\VecDeque.h" />
+    <ClInclude Include="dependencies\xxhash.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="utils\rbx\datamodel\datamodel.hpp" />
@@ -217,7 +219,11 @@
     <ClCompile Include="utils\utils\memory\memory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="dependencies\zstd.dll" />
     <None Include="init.lua" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="dependencies\zstd.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

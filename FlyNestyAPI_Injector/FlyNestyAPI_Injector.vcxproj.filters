@@ -114,6 +114,12 @@
     <ClInclude Include="utils\rbx\storage.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="dependencies\luacode.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\xxhash.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -188,5 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="init.lua" />
+    <None Include="dependencies\zstd.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="dependencies\zstd.lib" />
   </ItemGroup>
 </Project>
