@@ -14,6 +14,7 @@
 #include "dependencies/Luau/Compiler.h"
 #include "dependencies/Luau/BytecodeBuilder.h"
 #include "dependencies/Luau/BytecodeUtils.h"
+#include "lua_content.h"
 
 #pragma comment(lib, "ws2_32.lib")
 
@@ -110,23 +111,24 @@ HWND getWindowHandleFromProcessId(DWORD processId) {
 std::string message;
 
 std::string GetInitLuaScript() {
-	HRSRC resourceHandle = FindResourceW(NULL, MAKEINTRESOURCEW(101), RT_RCDATA);
-	if (resourceHandle == NULL) return "";
+	return lua_101;
+	/*HRSRC resourceHandle = FindResourceW(NULL, MAKEINTRESOURCEW(101), RT_RCDATA);
+	if (resourceHandle == NULL) return "print(101)";
 
 	HGLOBAL loadedResource = LoadResource(NULL, resourceHandle);
-	if (loadedResource == NULL) return "";
+	if (loadedResource == NULL) return "print(102)";
 
 	DWORD size = SizeofResource(NULL, resourceHandle);
 	void* data = LockResource(loadedResource);
 
-	return std::string(static_cast<char*>(data), size);
+	return std::string(static_cast<char*>(data), size);*/
 }
 
 extern "C" __declspec(dllexport) boolean inject() {
 	std::string luaContent = GetInitLuaScript();
 	DWORD PID = getPIDbyName(L"RobloxPlayerBeta.exe");
 
-	std::cout << luaContent << std::endl;
+	std::cout << "Luau Content: " + luaContent << std::endl;
 
 	if (PID == 0) {
 		return false;

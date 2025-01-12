@@ -264,13 +264,13 @@
     <ClInclude Include="dependencies\streamio\streamio.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_content.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

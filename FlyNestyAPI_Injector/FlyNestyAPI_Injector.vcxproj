@@ -236,8 +236,8 @@
     <ClInclude Include="dependencies\zstd\zstd.h" />
     <ClInclude Include="dependencies\zstd\zstd_errors.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="lua_content.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="utils\rbx\datamodel\datamodel.hpp" />
     <ClInclude Include="utils\rbx\instance\instance.hpp" />
     <ClInclude Include="utils\rbx\offsets.hpp" />
@@ -319,7 +319,9 @@
     <None Include="dependencies\zstd\Makefile" />
     <None Include="dependencies\zstd\module.modulemap" />
     <None Include="dependencies\zstd\README.md" />
-    <None Include="init.lua" />
+    <None Include="init.lua">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Library Include="dependencies\zstd.lib" />
