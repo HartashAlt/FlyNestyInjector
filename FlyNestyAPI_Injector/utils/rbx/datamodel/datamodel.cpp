@@ -28,9 +28,11 @@ namespace logs {
 		vector<filesystem::path> roblox_logs;
 		wstring roblox_logs_path = get_appdata_path() + L"\\Roblox\\logs";
 
+		wcout << roblox_logs_path << endl;
+
 		try {
 			for (const auto& filename : filesystem::directory_iterator(roblox_logs_path)) {
-				if (filename.is_regular_file() && filename.path().extension() == L".log" && filename.path().extension().wstring().find(L"Player") != wstring::npos)
+				if (filename.is_regular_file() && filename.path().extension() == L".log" && filename.path().filename().wstring().find(L"Player") != wstring::npos)
 					roblox_logs.push_back(filename.path());
 			}
 		}

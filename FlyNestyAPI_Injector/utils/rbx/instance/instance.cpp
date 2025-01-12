@@ -84,11 +84,7 @@ vector<rbx::instance_t> rbx::instance_t::getChildren() {
 		return container;
 	}
 
-	auto end = memory->read<uint64_t>(this->address + offsets::instance::childsize);
-
-	if (!end) {
-		return container;
-	}
+	auto end = memory->read<uint64_t>(start + offsets::instance::childsize);
 
 	for (auto instances = memory->read<uint64_t>(start); instances != end; instances += 16) {
 		rbx::instance_t child = memory->read<rbx::instance_t>(instances);
@@ -104,6 +100,7 @@ rbx::instance_t rbx::instance_t::find_first_child(string name) {
 	for (auto& object : this->getChildren()) {
 		if (object.getname() == name) {
 			target = static_cast<rbx::instance_t>(object);
+			cout << "Found " + name << endl;
 			break;
 		}
 	}
@@ -120,7 +117,7 @@ void rbx::instance_t::setBoolValue(bool value) {
 	memory->write<bool>(this->address + offsets::instance::instancevalue::value, value);
 }
 
-rbx::instance_t rbx::instance_t::wait_for_child(string name, int timeout = 5) {
+rbx::instance_t rbx::instance_t::wait_for_child(string name, int timeout) {
 	if (!this->address) {
 		return rbx::instance_t{};
 	}
